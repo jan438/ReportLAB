@@ -39,6 +39,6 @@ if __name__ == "__main__":
     key = input("WaitForBuild")
     try:
         doc.build(story)
-    except Exception:
-        print("Doc build failed")
+    except Exception as err:
+        print("Doc build failed", err)
     key = input("WaitFinal")
