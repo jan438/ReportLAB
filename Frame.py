@@ -1,9 +1,16 @@
+import os
+import sys
 from reportlab.lib.pagesizes import A4, landscape
 from reportlab.lib.units import inch
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.platypus import *
 
 if __name__ == "__main__":
+    if sys.platform[0] == 'l':
+        path = '/home/jan/git/ReportLAB'
+    if sys.platform[0] == 'w':
+        path = "C:/Users/janbo/OneDrive/Documents/GitHub/ReportLAB"
+    os.chdir(path)
     style_1 = ParagraphStyle(name='Stylo',
                               fontName='Helvetica',
                               fontSize=20,
