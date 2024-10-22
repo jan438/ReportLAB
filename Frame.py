@@ -37,5 +37,8 @@ if __name__ == "__main__":
         story.append(Paragraph('This should be on the top of the 2nd Frame!' + x, style_1))
         story.append(PageBreak())
     key = input("WaitForBuild")
-    doc.build(story)
+    try:
+        doc.build(story)
+    except Exception:
+        print("Doc build failed")
     key = input("WaitFinal")
