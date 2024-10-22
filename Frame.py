@@ -16,19 +16,16 @@ if __name__ == "__main__":
     frameCount = 2
     frameWidth = (doc.width) / frameCount
     frameHeight = doc.height - .05 * inch
-
     frames = []
     column = Frame(doc.leftMargin, doc.bottomMargin, 200, doc.height - .05* inch)
     frames.append(column)
     column = Frame(doc.leftMargin + 200, doc.bottomMargin, frameWidth - 200, doc.height - .05 * inch)
     frames.append(column)
-
     doc.addPageTemplates([PageTemplate(id='framess', frames=frames)])
-
     story = []
-
     for i, x in enumerate(['A', 'B', 'C']):
         text = x*10*(i+1)
+        print(text)
         p1 = Paragraph(text, style_1)
         w, h1 = p1.wrap(200, doc.height)
         p2 = Paragraph(text*2, style_1)
@@ -39,5 +36,6 @@ if __name__ == "__main__":
         story.append(Spacer(width=0, height=spac_height))
         story.append(Paragraph('This should be on the top of the 2nd Frame!' + x, style_1))
         story.append(PageBreak())
-
+    key = input("WaitForBuild")
     doc.build(story)
+    key = input("WaitFinal")
