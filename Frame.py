@@ -11,15 +11,8 @@ if __name__ == "__main__":
     if sys.platform[0] == 'w':
         path = "C:/Users/janbo/OneDrive/Documents/GitHub/ReportLAB"
     os.chdir(path)
-    style_1 = ParagraphStyle(name='Stylo',
-                              fontName='Helvetica',
-                              fontSize=20,
-                              leading=12)
-    doc = BaseDocTemplate('PDF/test_spacer.pdf', showBoundary=1, 
-                             pagesize=landscape(A4), topMargin=30,
-                           bottomMargin=30,
-                           leftMargin=30, rightMargin=30)
-
+    style_1 = ParagraphStyle(name='Stylo', fontName='Helvetica', fontSize=20, leading=12)
+    doc = BaseDocTemplate('PDF/test_spacer.pdf', showBoundary=1, pagesize=landscape(A4), topMargin=30, bottomMargin=30, leftMargin=30, rightMargin=30)
     frameCount = 2
     frameWidth = (doc.width) / frameCount
     frameHeight = doc.height - .05 * inch
@@ -43,9 +36,5 @@ if __name__ == "__main__":
         story.append(Spacer(width=0, height=spac_height))
         story.append(Paragraph('This should be on the top of the 2nd Frame!' + x, style_1))
         story.append(PageBreak())
-    key = input("WaitForBuild")
-    try:
-        doc.build(story)
-    except Exception as err:
-        print("Doc build failed", err)
-    key = input("WaitFinal")
+    doc.build(story)
+    key = input("Wait")
