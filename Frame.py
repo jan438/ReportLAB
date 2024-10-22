@@ -4,6 +4,7 @@ from reportlab.lib.pagesizes import A4, landscape
 from reportlab.lib.units import inch
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.platypus import *
+from reportlab.lib.colors import brown,blue, PCMYKColor, black, green, red, yellow, purple
 
 if __name__ == "__main__":
     if sys.platform[0] == 'l':
