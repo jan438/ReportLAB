@@ -6,8 +6,13 @@ from reportlab.pdfgen import canvas
 from reportlab.platypus import SimpleDocTemplate, Paragraph
 from reportlab.lib.styles import getSampleStyleSheet
 
+def background(c):
+    c.setFillColorRGB(1,0,0)
+    c.rect(5,5,652,792,fill=1)
+
 def mixed():
     my_canvas = canvas.Canvas("PDF/mixed_flowables.pdf", pagesize=letter)
+    background(my_canvas)
     styles = getSampleStyleSheet()
     width, height = letter
     text = "Hello, I'm a Paragraph"
