@@ -2,13 +2,13 @@
 import os
 import sys
 from reportlab.lib import colors
-from reportlab.lib.pagesizes import A4
+from reportlab.lib.pagesizes import A4, portrait
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
 from reportlab.platypus import Paragraph, Image
 
 def table_with_images():
-    doc = SimpleDocTemplate("PDF/table_with_images.pdf", pagesize=A4)
+    doc = SimpleDocTemplate("PDF/table_with_images.pdf", pagesize=portrait(A4))
     story = []
     styles = getSampleStyleSheet()
 
