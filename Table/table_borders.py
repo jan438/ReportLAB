@@ -9,9 +9,6 @@ from reportlab.platypus import (
 )
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import LETTER, A4, landscape, portrait
-
-
-
 def stylesheet():
     return {
         'table_default': TableStyle(
@@ -26,8 +23,6 @@ def stylesheet():
             ]
         ),
     }
-
-
 def build_flowables(stylesheet):
     return [
         Table(
@@ -39,8 +34,6 @@ def build_flowables(stylesheet):
             style=stylesheet['table_default'],
         )
     ]
-
-
 def build_pdf(filename, flowables):
     doc = BaseDocTemplate(filename, pagesize = portrait(A4), rightMargin=0, leftMargin=0, topMargin=0, bottomMargin=0)
     doc.addPageTemplates(
