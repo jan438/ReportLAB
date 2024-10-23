@@ -16,6 +16,7 @@ def stylesheet():
             [
                 ('INNERGRID', (0, 0), (-1, -1), 0.25, colors.gray),
                 ('INNERGRID', (1, 1), (2, 2), 0.5, colors.green),
+                ('BACKGROUND', (0, 0), (-1, -1), colors.yellow),
                 ('BOX', (0, 0), (-1, -1), 0.25, colors.black),
                 ('BOX', (1, 1), (2, 2), 0.5, colors.green),
                 ('BOX', (0, 0), (1, 1), 1, colors.red),
