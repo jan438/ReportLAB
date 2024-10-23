@@ -60,3 +60,4 @@ if sys.platform[0] == 'w':
 os.chdir(path)
 key = input("Wait")
 build_pdf('PDF/p0156_1.pdf', build_flowables(stylesheet()))
+key = input("WaitFinal")
