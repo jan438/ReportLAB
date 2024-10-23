@@ -37,5 +37,6 @@ if __name__ == "__main__":
         story.append(Spacer(width=0, height=spac_height))
         story.append(Paragraph('This should be on the top of the 2nd Frame!' + x, style_1))
         story.append(PageBreak())
-    doc.build(story)
     key = input("Wait")
+    doc.build(story)
+    key = input("WaitFinal")
