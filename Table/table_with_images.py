@@ -8,7 +8,7 @@ from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
 from reportlab.platypus import Paragraph, Image
 
 def table_with_images():
-    doc = SimpleDocTemplate("PDF/table_with_images.pdf", pagesize=portrait(A4))
+    doc = SimpleDocTemplate("PDF/table_with_images.pdf", pagesize=portrait(A4), rightMargin=0, leftMargin=0, topMargin=0, bottomMargin=0)
     story = []
     styles = getSampleStyleSheet()
 
