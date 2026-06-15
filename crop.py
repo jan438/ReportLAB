@@ -36,7 +36,9 @@ def create_pdf_template(filename, pagesize, title="Template"):
         # Optional: Draw border
         c.setLineWidth(1)
         c.rect(20, 20, width - 40, height - 40)
-        renderPDF.draw(scaleSVG("star.svg", 50.0), c, 0, 0)
+        renderPDF.draw(scaleSVG("star200200.svg", 50.0), c, 0, 0)
+        renderPDF.draw(scaleSVG("star200200.svg", 50.0), c, 200, 200)
+        renderPDF.draw(scaleSVG("star200200.svg", 50.0), c, -200, -200)
 
         c.showPage()
         c.save()
