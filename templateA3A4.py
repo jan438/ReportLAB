@@ -13,6 +13,17 @@ from reportlab.lib.colors import tan, black, green
 from reportlab.lib.units import inch, cm, mm
 from math import pi, cos, sin, radians, sqrt
 
+def scaleSVG(svgfile, scaling_factor):
+    svg_root = load_svg_file(svgfile)
+    svgRenderer = SvgRenderer(svgfile)
+    drawing = svgRenderer.render(svg_root)
+    scaling_x = scaling_factor
+    scaling_y = scaling_factor
+    drawing.width = drawing.minWidth() * scaling_x
+    drawing.height = drawing.height * scaling_y
+    drawing.scale(scaling_x, scaling_y)
+    return drawing
+    
 def create_pdf_template(filename, pagesize, title="Template"):
     """
     Creates a blank PDF template with a title.
@@ -33,6 +44,8 @@ def create_pdf_template(filename, pagesize, title="Template"):
         c.setLineWidth(1)
         c.setFillColor(HexColor('#ff0000'))
         c.rect(20, 20, width - 40, height - 40, fill=1, stroke=1)
+        drawing = scaleSVG('SVG/Plus_symbol.svg', 1.0)    
+        renderPDF.draw(drawing, c, 150, 475)
 
         c.showPage()
         c.save()
