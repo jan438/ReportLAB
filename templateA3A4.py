@@ -57,6 +57,12 @@ def create_pdf_template(filename, pagesize, title="Template"):
         print(f"❌ Error creating PDF: {e}")
 
 if __name__ == "__main__":
+
+    if sys.platform[0] == 'l':
+        path = '/home/jan/git/ReportLAB'
+    if sys.platform[0] == 'w':
+        path = "C:/Users/janbo/OneDrive/Documents/GitHub/ReportLAB"
+    os.chdir(path)
     os.makedirs("templates", exist_ok=True)
 
     # Create A4 template
