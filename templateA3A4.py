@@ -46,6 +46,8 @@ def create_pdf_template(filename, pagesize, title="Template"):
         c.rect(20, 20, width - 40, height - 40, fill=1, stroke=1)
         drawing = scaleSVG('SVG/Plus_symbol.svg', 1.0)    
         renderPDF.draw(drawing, c, 150, 475)
+        drawing = scaleSVG('SVG/star.svg', 1.0)
+        print("Star width", drawing.width, "height", drawing.height)
 
         c.showPage()
         c.save()
