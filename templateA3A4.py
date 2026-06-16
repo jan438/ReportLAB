@@ -1,5 +1,6 @@
 from reportlab.lib.pagesizes import A3, A4
 from reportlab.pdfgen import canvas
+from reportlab.lib.colors import yellow, green, red, black, gray, white, HexColor, tan
 import os
 
 def create_pdf_template(filename, pagesize, title="Template"):
@@ -20,7 +21,8 @@ def create_pdf_template(filename, pagesize, title="Template"):
 
         # Optional: Draw border
         c.setLineWidth(1)
-        c.rect(20, 20, width - 40, height - 40)
+        c.setFillColor(HexColor('#ff0000'))
+        c.rect(20, 20, width - 40, height - 40, fill=1, stroke=1)
 
         c.showPage()
         c.save()
