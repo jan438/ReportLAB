@@ -1,7 +1,17 @@
 from reportlab.lib.pagesizes import A3, A4
 from reportlab.pdfgen import canvas
-from reportlab.lib.colors import yellow, green, red, black, gray, white, HexColor, tan
 import os
+import csv
+import sys
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.pdfbase.pdfmetrics import registerFontFamily
+from svglib.svglib import svg2rlg, load_svg_file, SvgRenderer
+from reportlab.graphics import renderPDF
+from reportlab.lib.colors import yellow, green, red, black, HexColor
+from reportlab.lib.colors import tan, black, green
+from reportlab.lib.units import inch, cm, mm
+from math import pi, cos, sin, radians, sqrt
 
 def create_pdf_template(filename, pagesize, title="Template"):
     """
