@@ -32,7 +32,7 @@ if __name__ == "__main__":
     os.makedirs("templates", exist_ok=True)
 
     # Create A4 template
-    create_pdf_template("templates/template_A4.pdf", A4, title="A4 Template")
+    create_pdf_template("PDF/template_A4.pdf", A4, title="A4 Template")
 
     # Create A3 template
-    create_pdf_template("templates/template_A3.pdf", A3, title="A3 Template")
+    create_pdf_template("PDF/template_A3.pdf", A3, title="A3 Template")
