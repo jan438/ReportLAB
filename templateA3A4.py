@@ -35,11 +35,9 @@ def create_pdf_template(filename, pagesize, title="Template"):
     try:
         c = canvas.Canvas(filename, pagesize=pagesize)
         width, height = pagesize
-
         # Draw title at the top center
         c.setFont("Helvetica-Bold", 24)
         c.drawCentredString(width / 2, height - 50, title)
-
         # Optional: Draw border
         c.setLineWidth(1)
         c.setFillColor(HexColor('#ff0000'))
@@ -49,7 +47,6 @@ def create_pdf_template(filename, pagesize, title="Template"):
         drawing = scaleSVG('SVG/star.svg', 1.0)
         print("Star width", drawing.width, "height", drawing.height)
         renderPDF.draw(drawing, c, -500, -100)
-
         c.showPage()
         c.save()
         print(f"✅ PDF template '{filename}' created successfully.")
@@ -57,7 +54,6 @@ def create_pdf_template(filename, pagesize, title="Template"):
         print(f"❌ Error creating PDF: {e}")
 
 if __name__ == "__main__":
-
     if sys.platform[0] == 'l':
         path = '/home/jan/git/ReportLAB'
     if sys.platform[0] == 'w':
@@ -106,6 +102,5 @@ if __name__ == "__main__":
     pdfmetrics.registerFont(TTFont('CormorantGaramondBoldItalic', 'CormorantGaramond-BoldItalic.ttf'))
     # Create A4 template
     create_pdf_template("PDF/template_A4.pdf", A4, title="A4 Template")
-
     # Create A3 template
     create_pdf_template("PDF/template_A3.pdf", A3, title="A3 Template")
