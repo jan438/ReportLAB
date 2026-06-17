@@ -27,8 +27,8 @@ def scaleSVG(svgfile, scaling_factor):
 def drawfont(i, c, name):
     c.setFillColor(HexColor('#ffffff'))
     c.setFont(name, 35)
-    c.drawString(30, 500 - i * 60, "ALARM")
-    c.drawString(30, 470 - i * 60, name)
+    c.drawString(30, 600 - i * 60, "ALARM")
+    c.drawString(30, 570 - i * 60, name)
     
 def create_pdf_template(filename, pagesize, title="Template"):
     """
@@ -59,6 +59,10 @@ def create_pdf_template(filename, pagesize, title="Template"):
         drawfont(3, c, "TimesNewRoman")
         drawfont(4, c, "Trebuchet")
         drawfont(5, c, "Ubuntu")
+        drawfont(6, c, "DejaVuSerif")
+        drawfont(7, c, "LiberationSerif")   
+        drawfont(8, c, "DancingScript")
+        drawfont(9, c, "CormorantGaramond")
         c.showPage()
         c.save()
         print(f"✅ PDF template '{filename}' created successfully.")
