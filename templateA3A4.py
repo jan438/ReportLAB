@@ -27,10 +27,10 @@ def scaleSVG(svgfile, scaling_factor):
 def drawfont(i, c, name):
     c.setFillColor(HexColor("#ffffff"))
     c.setFont(name, 30)
-    c.drawString(100, 1100 - i * 90, "ABCDEFGHIJKLMNOPQRSTUVVWXYZ")
-    c.drawString(100, 1075 - i * 90, "abcdefghijklmnopqrstuvwxyz")
+    c.drawString(100, 950 - i * 92, "ABCDEFGHIJKLMNOPQRSTUVVWXYZ")
+    c.drawString(100, 925 - i * 92, "abcdefghijklmnopqrstuvwxyz")
     c.setFont(name, 22)
-    c.drawString(100, 1048 - i * 90, name)
+    c.drawString(100, 895 - i * 92, name)
     
 def create_pdf_template(filename, pagesize, title="Template"):
     """
