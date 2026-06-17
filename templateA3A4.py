@@ -54,6 +54,7 @@ def create_pdf_template(filename, pagesize, title="Template"):
         print("Star width", drawing.width, "height", drawing.height)
         renderPDF.draw(drawing, c, -500, -100)
         drawfont(0, c, "Arial")
+        drawfont(1, c, "Verdana")
         c.showPage()
         c.save()
         print(f"✅ PDF template '{filename}' created successfully.")
