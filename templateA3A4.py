@@ -24,6 +24,12 @@ def scaleSVG(svgfile, scaling_factor):
     drawing.scale(scaling_x, scaling_y)
     return drawing
     
+def drawfont(i, c, name):
+    c.setFillColor(HexColor('#ffffff'))
+    c.setFont(name, 35)
+    c.drawString(30, 500 - i * 60, "ALARM")
+    c.drawString(30, 470 - i * 60, name)
+    
 def create_pdf_template(filename, pagesize, title="Template"):
     """
     Creates a blank PDF template with a title.
@@ -47,11 +53,7 @@ def create_pdf_template(filename, pagesize, title="Template"):
         drawing = scaleSVG('SVG/star.svg', 1.0)
         print("Star width", drawing.width, "height", drawing.height)
         renderPDF.draw(drawing, c, -500, -100)
-        c.setFillColor(HexColor('#ffffff'))
-        c.setFont("Arial", 35)
-        strwidth = pdfmetrics.stringWidth("ALARM", "Arial" , 35)
-        c.drawString(30, 60, "ALARM")
-        c.drawString(30, 30, "Arial")
+        drawfont(0, c, "Arial")
         c.showPage()
         c.save()
         print(f"✅ PDF template '{filename}' created successfully.")
