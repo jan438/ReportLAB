@@ -27,10 +27,10 @@ def scaleSVG(svgfile, scaling_factor):
 def drawfont(i, c, name):
     c.setFillColor(HexColor("#ffffff"))
     c.setFont(name, 30)
-    c.drawString(100, 950 - i * 92, "ABCDEFGHIJKLMNOPQRSTUVVWXYZ")
-    c.drawString(100, 925 - i * 92, "abcdefghijklmnopqrstuvwxyz")
+    c.drawString(100, 975 - i * 92, "ABCDEFGHIJKLMNOPQRSTUVVWXYZ")
+    c.drawString(100, 950 - i * 92, "abcdefghijklmnopqrstuvwxyz")
     c.setFont(name, 22)
-    c.drawString(100, 895 - i * 92, name)
+    c.drawString(100, 920 - i * 92, name)
     
 def create_pdf_template(filename, pagesize, title="Template"):
     """
@@ -47,11 +47,11 @@ def create_pdf_template(filename, pagesize, title="Template"):
         c.setLineWidth(1)
         c.setFillColor(HexColor("#000000"))
         c.setStrokeColor(HexColor("#ffffff"))
-        c.rect(20, 20, width - 40, height - 40, fill=1, stroke=1)
+        c.rect(20, 20, width - 40, height - 30, fill=1, stroke=1)
         # Draw title at the top center
         c.setFont("Helvetica-Bold", 24)
         c.setFillColor(HexColor("#ffffff"))
-        c.drawCentredString(width / 2, height - 50, "hallohallo")
+        c.drawCentredString(width / 2, height - 150, title)
         drawing = scaleSVG('SVG/star.svg', 1.0)
         renderPDF.draw(drawing, c, -500, -100)
         drawfont(0, c, "Arial")
