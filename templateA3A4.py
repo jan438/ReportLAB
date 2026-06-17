@@ -43,6 +43,7 @@ def create_pdf_template(filename, pagesize, title="Template"):
     try:
         c = canvas.Canvas(filename, pagesize=pagesize)
         width, height = pagesize
+        c.setTitle(title)
         # Optional: Draw border
         c.setLineWidth(1)
         c.setFillColor(HexColor("#000000"))
