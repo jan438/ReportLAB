@@ -50,9 +50,9 @@ def create_pdf_template(filename, pagesize, title="Template"):
         c.rect(20, 20, width - 40, height - 40, fill=1, stroke=1)
         # Draw title at the top center
         c.setFont("Helvetica-Bold", 24)
-        c.drawCentredString(width / 2, height - 50, title)
+        c.setFillColor(HexColor("#ffffff"))
+        c.drawCentredString(width / 2, height - 50, "hallohallo")
         drawing = scaleSVG('SVG/star.svg', 1.0)
-        print("Star width", drawing.width, "height", drawing.height)
         renderPDF.draw(drawing, c, -500, -100)
         drawfont(0, c, "Arial")
         drawfont(1, c, "Verdana")
