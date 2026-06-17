@@ -25,7 +25,7 @@ def scaleSVG(svgfile, scaling_factor):
     return drawing
     
 def drawfont(i, c, name):
-    c.setFillColor(HexColor('#ffffff'))
+    c.setFillColor(HexColor("#ffffff"))
     c.setFont(name, 35)
     c.drawString(30, 600 - i * 60, "ALβIREO")
     c.drawString(30, 570 - i * 60, name)
@@ -46,10 +46,9 @@ def create_pdf_template(filename, pagesize, title="Template"):
         c.drawCentredString(width / 2, height - 50, title)
         # Optional: Draw border
         c.setLineWidth(1)
-        c.setFillColor(HexColor('#ff0000'))
+        c.setFillColor(HexColor("#000000"))
+        c.setStrokeColor(HexColor("#ffffff"))
         c.rect(20, 20, width - 40, height - 40, fill=1, stroke=1)
-        drawing = scaleSVG('SVG/Plus_symbol.svg', 1.0)    
-        renderPDF.draw(drawing, c, 150, 475)
         drawing = scaleSVG('SVG/star.svg', 1.0)
         print("Star width", drawing.width, "height", drawing.height)
         renderPDF.draw(drawing, c, -500, -100)
